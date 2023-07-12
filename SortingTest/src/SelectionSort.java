@@ -1,5 +1,10 @@
+/*
+ * Vincent Testagrossa
+ * CMSC 451
+ * 12JUL2023
+ */
 public class SelectionSort extends AbstractSort{
-
+    //Implemented abstract sort. Calls the inherited methods startSort(), sorts the input array, then endSort().
     @Override
     public void sort(int[] inOut) throws UnsortedException {
         startSort();

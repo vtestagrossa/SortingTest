@@ -1,3 +1,8 @@
+/*
+ * Vincent Testagrossa
+ * CMSC 451
+ * 12JUL2023
+ */
 public abstract class AbstractSort{
     // critical count, starttime, endtime, and elapsedtime are all
     // set to -1 in case they aren't initialized by calling sort()
