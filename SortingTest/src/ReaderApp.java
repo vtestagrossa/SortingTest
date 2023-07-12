@@ -14,12 +14,14 @@ public class ReaderApp {
             path.showOpenDialog(null);
             file = path.getSelectedFile();
             reader.setTable(file);
+
             JTable table = reader.getTable(file);
-            table.setBounds(0, 0, 800, 600);
+            table.setPreferredScrollableViewportSize(null);
             JFrame frame = new JFrame("CSV Reader App");
             JScrollPane scrollPane = new JScrollPane(table);
+
             frame.add(scrollPane);
-            frame.setSize(800, 300);
+            frame.setSize(800, 250);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
         } catch (FileNotFoundException ex) {
