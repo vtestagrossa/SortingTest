@@ -2,8 +2,32 @@ public class ShellSort extends AbstractSort {
 
     @Override
     public void sort(int[] inOut) throws UnsortedException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sort'");
+        startSort();
+        inOut = sortShell(inOut);
+        endSort();
+        if (!this.validateSorted(inOut)){
+            String message = "The ShellSort didn't properly sort the array.";
+            throw new UnsortedException(message);
+        }
     }
-    
+    /*
+     * Implementation from https://www.baeldung.com/java-shell-sort
+     */
+    private int[] sortShell(int[] inOut){
+        int n = inOut.length;
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                int key = inOut[i];
+                int j = i;
+                while (j >= gap && inOut[j - gap] > key) {
+                    inOut[j] = inOut[j - gap];
+                    j -= gap;
+                    incrementCount();
+                }
+                inOut[j] = key;
+                incrementCount();
+            }
+        }
+        return inOut;
+    }
 }
