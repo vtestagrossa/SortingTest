@@ -24,8 +24,8 @@ public class SelectionSort extends AbstractSort{
             for (int j = i + 1; j < inOut.length; j++) {
                 if (inOut[minElementIndex] > inOut[j]) {
                     minElementIndex = j;
-                    incrementCount();
                 }
+                incrementCount();
             }
     
             if (minElementIndex != i) {
@@ -33,7 +33,6 @@ public class SelectionSort extends AbstractSort{
                 inOut[i] = inOut[minElementIndex];
                 inOut[minElementIndex] = temp;
             }
-            incrementCount();
         }
         return inOut;
     }

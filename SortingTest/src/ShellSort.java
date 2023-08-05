@@ -32,7 +32,6 @@ public class ShellSort extends AbstractSort {
                 inOut[j] = key;
                 incrementCount();
             }
-            incrementCount();
         }
         return inOut;
     }
